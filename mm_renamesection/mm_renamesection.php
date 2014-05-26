@@ -5,7 +5,7 @@
  * 
  * @desc A widget for ManagerManager plugin that allows sections to be renamed.
  * 
- * @uses ManagerManager plugin 0.5.
+ * @uses ManagerManager plugin 0.6.2.
  * 
  * @param $section {string; 'content'; 'tvs'} - The name of the section this should apply to. @required
  * @param $newname {string} - The new text for the label. @required
@@ -26,16 +26,6 @@ function mm_renameSection($section, $newname, $roles = '', $templates = ''){
 		$output = "//  -------------- mm_renameSection :: Begin ------------- \n";
 		
 		switch ($section){
-			case 'content':
-				$output .= '$j("div#content_header").empty().prepend("'.jsSafe($newname).'");' . "\n";
-			break;
-			
-			case 'tvs':
-				$output .= '
-				$j("div#tv_header").empty().prepend("'.jsSafe($newname).'");
-				' ;
-			break;
-			
 			case 'access': // These have moved to tabs in 1.0.1
 				$output .= '$j("div#sectionAccessHeader").empty().prepend("'.jsSafe($newname).'");' . "\n";
 			break;
